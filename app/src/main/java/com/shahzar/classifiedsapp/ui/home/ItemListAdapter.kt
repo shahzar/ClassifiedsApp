@@ -12,6 +12,8 @@ class ItemListAdapter @Inject constructor(
     private val imageLoader: RequestManager
 ): RecyclerView.Adapter<ItemListAdapter.ItemViewHolder>() {
 
+    var clicklistener: ((Product) -> Unit)? = null
+
     var items: List<Product> = arrayListOf()
         set(value) {
             notifyDataSetChanged()
@@ -30,6 +32,10 @@ class ItemListAdapter @Inject constructor(
         imageLoader
             .load(item.imageUrls.firstOrNull())
             .into(holder.binding.imgProduct)
+
+        holder.binding.root.setOnClickListener {
+            clicklistener?.invoke(item)
+        }
     }
 
     override fun getItemCount() = items.size

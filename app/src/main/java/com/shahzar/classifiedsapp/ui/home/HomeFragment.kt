@@ -5,6 +5,7 @@ import com.shahzar.classifiedsapp.NavMgr
 import com.shahzar.classifiedsapp.R
 import com.shahzar.classifiedsapp.databinding.HomeFragmentBinding
 import com.shahzar.classifiedsapp.ui.base.BaseFragment
+import com.shahzar.classifiedsapp.ui.productdetails.ProductDetailsFragment
 import javax.inject.Inject
 
 class HomeFragment : BaseFragment<HomeViewModel>() {
@@ -31,6 +32,10 @@ class HomeFragment : BaseFragment<HomeViewModel>() {
 
         binding.listItems.layoutManager = LinearLayoutManager(context)
         binding.listItems.adapter = itemListAdapter
+
+        itemListAdapter.clicklistener = { product ->
+            navMgr.pushFragment(activity, ProductDetailsFragment.newInstance(product), true)
+        }
     }
 
     override fun setupObservers() {

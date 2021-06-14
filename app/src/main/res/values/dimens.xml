@@ -2,6 +2,8 @@
 <resources>
     <dimen name="font_regular">16sp</dimen>
     <dimen name="font_large">18sp</dimen>
+    <dimen name="font_large2x">20sp</dimen>
+    <dimen name="font_large3x">22sp</dimen>
 
     <dimen name="margin_small">5dp</dimen>
     <dimen name="margin_regular">10dp</dimen>
