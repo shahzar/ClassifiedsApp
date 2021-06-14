@@ -6,6 +6,7 @@ import com.shahzar.classifiedsapp.di.ViewModelBuilder
 import com.shahzar.classifiedsapp.di.modules.AppModule
 import com.shahzar.classifiedsapp.di.modules.NetworkModule
 import com.shahzar.classifiedsapp.ui.home.HomeFragment
+import com.shahzar.classifiedsapp.ui.productdetails.ProductDetailsFragment
 import dagger.Component
 import javax.inject.Singleton
 
@@ -16,5 +17,6 @@ interface AppComponent {
     fun application(application: Application)
     fun inject(mainActivity: MainActivity)
     fun inject(homeFragment: HomeFragment)
+    fun inject(homeFragment: ProductDetailsFragment)
 
 }

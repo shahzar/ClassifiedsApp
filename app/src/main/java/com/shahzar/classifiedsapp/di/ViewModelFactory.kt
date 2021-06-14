@@ -3,6 +3,7 @@ package com.shahzar.classifiedsapp.di
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.shahzar.classifiedsapp.ui.home.HomeViewModel
+import com.shahzar.classifiedsapp.ui.home.ProductDetailsViewModel
 import com.shahzar.classifiedsapp.ui.main.MainViewModel
 import dagger.Binds
 import dagger.MapKey
@@ -34,6 +35,11 @@ internal abstract class ViewModelBuilder {
     @IntoMap
     @ViewModelKey(HomeViewModel::class)
     internal abstract fun homeViewModel(homeViewModel: HomeViewModel) : ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(ProductDetailsViewModel::class)
+    internal abstract fun productDetailsViewModel(homeViewModel: ProductDetailsViewModel) : ViewModel
 
     @Binds
     @IntoMap
