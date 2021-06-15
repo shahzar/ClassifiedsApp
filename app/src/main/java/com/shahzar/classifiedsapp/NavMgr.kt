@@ -30,7 +30,7 @@ class NavMgr {
 
     fun pop(baseActivity: BaseActivity): Boolean {
 
-        if (baseActivity.supportFragmentManager.backStackEntryCount <= 1) {
+        if (baseActivity.supportFragmentManager.backStackEntryCount < 1) {
             return false
         }
 

@@ -20,6 +20,17 @@
             app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
             app:layout_constraintBottom_toBottomOf="@id/guidelineBottom" />
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintTop_toTopOf="@id/guidelineTop"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineBottom"
+            android:visibility="gone"
+            />
+
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineContent"

@@ -1,5 +1,7 @@
 package com.shahzar.classifiedsapp.ui.home
 
+import android.view.View
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.shahzar.classifiedsapp.NavMgr
 import com.shahzar.classifiedsapp.R
@@ -40,6 +42,11 @@ class HomeFragment : BaseFragment<HomeViewModel>() {
 
     override fun setupObservers() {
         super.setupObservers()
+
+        viewModel.loading.observe(viewLifecycleOwner, { show ->
+            binding.progressBar.visibility = if(show) View.VISIBLE else View.GONE
+        })
+
         viewModel.onProductList.observe(viewLifecycleOwner, {
             itemListAdapter.items = it
         })

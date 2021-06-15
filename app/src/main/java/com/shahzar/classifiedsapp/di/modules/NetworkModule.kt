@@ -7,6 +7,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.google.gson.GsonBuilder
 import com.shahzar.classifiedsapp.BuildConfig
+import com.shahzar.classifiedsapp.R
 import com.shahzar.classifiedsapp.data.remote.ApiService
 import com.shahzar.classifiedsapp.ui.home.ItemListAdapter
 import dagger.Module
@@ -67,6 +68,7 @@ class NetworkModule {
     @Provides
     fun providesGlideRequestOptions(): RequestOptions {
         return RequestOptions()
+            .placeholder(R.drawable.anim_progress)
             .diskCacheStrategy(DiskCacheStrategy.ALL)
     }
 
